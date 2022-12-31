@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:XammySandbox.ViewModels"
+             x:Class="XammySandbox.Views.CoffeeEquipmentPage"
+             BackgroundColor="LightGray"
+             x:DataType="viewmodels:CoffeeEquipmentViewModel">
+    <ContentPage.BindingContext>
+        <viewmodels:CoffeeEquipmentViewModel/>
+    </ContentPage.BindingContext>
+    <Grid RowDefinitions="*, Auto, Auto, *">
+        
+        <Label 
+            x:Name="LabelCount"
+                Grid.Row="1"
+                Text="{Binding CountDisplay}"
+                HorizontalOptions="Center"
+                FontSize="Large"/>
+                
+        <Button
+            x:Name="ButtonClick"
+            Command="{Binding IncreaseCount}"
+                Grid.Row="2"
+                Text="Click Me"               
+                />
+    </Grid>
+</ContentPage>
