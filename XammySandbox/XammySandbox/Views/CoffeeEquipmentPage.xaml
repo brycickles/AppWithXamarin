@@ -1,27 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:viewmodels="clr-namespace:XammySandbox.ViewModels"
-             x:Class="XammySandbox.Views.CoffeeEquipmentPage"
-             BackgroundColor="LightGray"
-             x:DataType="viewmodels:CoffeeEquipmentViewModel">
+<ContentPage
+    x:Class="XammySandbox.Views.CoffeeEquipmentPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodels="clr-namespace:XammySandbox.ViewModels"
+    xmlns:model="clr-namespace:XammySandbox.Models"
+    xmlns:mvvm="clr-namespace:MvvmHelpers;assembly=MvvmHelpers"
+    x:Name="CoffeePage"
+    x:DataType="viewmodels:CoffeeEquipmentViewModel"
+    BackgroundColor="{AppThemeBinding 
+                        Dark={StaticResource WindowBackgroundColorDark}, 
+                        Light={StaticResource WindowBackgroundColor}}">
     <ContentPage.BindingContext>
         <viewmodels:CoffeeEquipmentViewModel/>
     </ContentPage.BindingContext>
-    <Grid RowDefinitions="*, Auto, Auto, *">
+
+    <ListView BackgroundColor="Red">
         
-        <Label 
-            x:Name="LabelCount"
-                Grid.Row="1"
-                Text="{Binding CountDisplay}"
-                HorizontalOptions="Center"
-                FontSize="Large"/>
-                
-        <Button
-            x:Name="ButtonClick"
-            Command="{Binding IncreaseCount}"
-                Grid.Row="2"
-                Text="Click Me"               
-                />
-    </Grid>
+    </ListView>
+
 </ContentPage>
